@@ -88,21 +88,22 @@ def grade_to_gpa(grade):
         if grade is range(0, 69):
             assert letter_grade == "FZ"
 
-            # assign the gpa value to letter_grade
-            if letter_grade == "A+":
-                assert gpa == 4.0
-            if letter_grade == "A":
-                assert gpa == 4.0
-            if letter_grade == "A-":
-                assert gpa == 3.7
-            if letter_grade == "B+":
-                assert gpa == 3.3
-            if letter_grade == "B":
-                assert gpa == 3.0
-            if letter_grade == "B-":
-                assert gpa == 2.7
-            if letter_grade == "FZ":
-                assert gpa == 0.0
+    # assign the gpa value to letter_grade
+    if letter_grade == "A+":
+        assert gpa == 4.0
+    if letter_grade == "A":
+        assert gpa == 4.0
+    if letter_grade == "A-":
+        assert gpa == 3.7
+    if letter_grade == "B+":
+        assert gpa == 3.3
+    if letter_grade == "B":
+        assert gpa == 3.0
+    if letter_grade == "B-":
+        assert gpa == 2.7
+    if letter_grade == "FZ":
+        assert gpa == 0.0
+
     else:
         # raise a TypeError exception
         raise TypeError("Invalid type passed as parameter")
