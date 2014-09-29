@@ -41,13 +41,13 @@ def grade_to_gpa(grade):
     """
 
     # defines variable input
-    type(grade)
+    input(grade)
     # sets letter_grade as blank string
-    letter_grade = ""
+    letter_grade = str
 
     if grade is str:
         # check that the grade is one of the accepted values
-        if grade == ("A+", "A-", "B+", "B", "B-", "FZ"):
+        if grade == "A+""A-""B+""B""B-""FZ":
             assert grade == letter_grade
 
     elif grade is int:
@@ -60,7 +60,7 @@ def grade_to_gpa(grade):
             raise ValueError
         # convert the numeric grade to a letter grade
         if grade is range(85, 100):
-            assert letter_grade == "A+,A"
+            assert letter_grade == "A+"
         if grade is range(80, 84):
             assert letter_grade == "A-"
         if grade is range(77, 79):
@@ -77,7 +77,9 @@ def grade_to_gpa(grade):
         raise TypeError("Invalid type passed as parameter")
 
     # assign the gpa value to letter_grade
-    if letter_grade == "A+""A":
+    if letter_grade == "A+":
+        gpa = 4.0
+    if letter_grade == "A":
         gpa = 4.0
     if letter_grade == "A-":
         gpa = 3.7
