@@ -41,17 +41,17 @@ def grade_to_gpa(grade):
     """
 
     # defines variable input
-    input(grade)
-    # references letter_grade as blank value
+    type(grade)
+    # sets letter_grade as blank string
     letter_grade = ""
-    gpa = 
 
-    if type(grade) is str:
+    if grade is str:
         # check that the grade is one of the accepted values
         if grade is 'A+''A-''B+''B''B-''FZ':
             assert grade == letter_grade
 
-    elif type(grade) is int:
+    elif grade is int:
+        round(grade, 0)
         # checks if value is in expected range
         if int < 100:
             raise ValueError
