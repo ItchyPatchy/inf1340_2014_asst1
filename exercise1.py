@@ -42,12 +42,28 @@ def grade_to_gpa(grade):
 
     # defines variable input
     input(grade)
-    # sets letter_grade as blank string
+
+    # defines letter_grade as some string
     letter_grade = str
+
+    # defines gpa as some integer
+    gpa = int
 
     if grade is str:
         # check that the grade is one of the accepted values
-        if grade == "A+""A-""B+""B""B-""FZ":
+        if grade == "A+":
+            assert grade == letter_grade
+        if grade == "A":
+            assert grade == letter_grade
+        if grade == "A-":
+            assert grade == letter_grade
+        if grade == "B+":
+            assert grade == letter_grade
+        if grade == "B":
+            assert grade == letter_grade
+        if grade == "B-":
+            assert grade == letter_grade
+        if grade == "FZ":
             assert grade == letter_grade
 
     elif grade is int:
@@ -72,24 +88,23 @@ def grade_to_gpa(grade):
         if grade is range(0, 69):
             assert letter_grade == "FZ"
 
+            # assign the gpa value to letter_grade
+            if letter_grade == "A+":
+                assert gpa == 4.0
+            if letter_grade == "A":
+                assert gpa == 4.0
+            if letter_grade == "A-":
+                assert gpa == 3.7
+            if letter_grade == "B+":
+                assert gpa == 3.3
+            if letter_grade == "B":
+                assert gpa == 3.0
+            if letter_grade == "B-":
+                assert gpa == 2.7
+            if letter_grade == "FZ":
+                assert gpa == 0.0
     else:
         # raise a TypeError exception
         raise TypeError("Invalid type passed as parameter")
-
-    # assign the gpa value to letter_grade
-    if letter_grade == "A+":
-        gpa = 4.0
-    if letter_grade == "A":
-        gpa = 4.0
-    if letter_grade == "A-":
-        gpa = 3.7
-    if letter_grade == "B+":
-        gpa = 3.3
-    if letter_grade == "B":
-        gpa = 3.0
-    if letter_grade == "B-":
-        gpa = 2.7
-    if letter_grade == "FZ":
-        gpa = 0.0
 
     return gpa
