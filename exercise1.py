@@ -40,14 +40,11 @@ def grade_to_gpa(grade):
         ValueError if parameter is out of range
     """
 
-    # defines variable input
-    input(grade)
-
     # defines letter_grade as some string
-    letter_grade = str
+    letter_grade = ""
 
     # defines gpa as some integer
-    gpa = int
+    gpa = 0.0
 
     if grade is str:
         # check that the grade is one of the accepted values
