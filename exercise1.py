@@ -44,7 +44,7 @@ def grade_to_gpa(grade):
     letter_grade = ""
 
     # states gpa as blank value
-    gpa = ()
+    gpa = 0.0
 
     if type(grade) is str:
         # check that the grade is one of the accepted values
@@ -67,9 +67,9 @@ def grade_to_gpa(grade):
         # rounds input to whole number
         round(type(grade), 0)
         # checks if value is in expected range
-        if 100 > type(grade):
+        if 100 < type(grade):
             raise ValueError
-        if 0 < type(grade):
+        if 1 > type(grade):
             raise ValueError
         # convert the numeric grade to a letter grade
         if type(grade) is range(85, 100):
@@ -87,19 +87,19 @@ def grade_to_gpa(grade):
 
     # assign the gpa value to letter_grade
     if letter_grade == "A+":
-        assert 4.0 == gpa
+        assert [4.0] == gpa
     if letter_grade == "A":
-        assert 4.0 == gpa
+        assert [4.0] == gpa
     if letter_grade == "A-":
-        assert 3.7 == gpa
+        assert [3.7] == gpa
     if letter_grade == "B+":
-        assert 3.3 == gpa
+        assert [3.3] == gpa
     if letter_grade == "B":
-        assert 3.0 == gpa
+        assert [3.0] == gpa
     if letter_grade == "B-":
-        assert 2.7 == gpa
+        assert [2.7] == gpa
     if letter_grade == "FZ":
-        assert 0.0 == gpa
+        assert [0.0] == gpa
 
     else:
         # raise a TypeError exception
