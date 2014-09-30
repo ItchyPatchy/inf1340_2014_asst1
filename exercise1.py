@@ -40,11 +40,11 @@ def grade_to_gpa(grade):
         ValueError if parameter is out of range
     """
 
-    # defines letter_grade as some string
+    # states letter_grade as blank value
     letter_grade = ""
 
-    # defines gpa as some integer
-    gpa = 0.0
+    # states gpa as blank value
+    gpa = ()
 
     if grade is str:
         # check that the grade is one of the accepted values
@@ -67,39 +67,39 @@ def grade_to_gpa(grade):
         # rounds input to whole number
         round(grade, 0)
         # checks if value is in expected range
-        if grade < 100:
+        if 100 > grade:
             raise ValueError
-        if grade > 0:
+        if 0 < grade:
             raise ValueError
         # convert the numeric grade to a letter grade
         if grade is range(85, 100):
-            assert letter_grade == "A+"
+            assert "A+" == letter_grade
         if grade is range(80, 84):
-            assert letter_grade == "A-"
+            assert "A-" == letter_grade
         if grade is range(77, 79):
-            assert letter_grade == "B+"
+            assert "B+" == letter_grade
         if grade is range(73, 76):
-            assert letter_grade == "B"
+            assert "B" == letter_grade
         if grade is range(70, 72):
-            assert letter_grade == "B-"
+            assert "B-" == letter_grade
         if grade is range(0, 69):
-            assert letter_grade == "FZ"
+            assert "FZ" == letter_grade
 
     # assign the gpa value to letter_grade
     if letter_grade == "A+":
-        assert gpa == 4.0
+        assert 4.0 == gpa
     if letter_grade == "A":
-        assert gpa == 4.0
+        assert 4.0 == gpa
     if letter_grade == "A-":
-        assert gpa == 3.7
+        assert 3.7 == gpa
     if letter_grade == "B+":
-        assert gpa == 3.3
+        assert 3.3 == gpa
     if letter_grade == "B":
-        assert gpa == 3.0
+        assert 3.0 == gpa
     if letter_grade == "B-":
-        assert gpa == 2.7
+        assert 2.7 == gpa
     if letter_grade == "FZ":
-        assert gpa == 0.0
+        assert 0.0 == gpa
 
     else:
         # raise a TypeError exception
