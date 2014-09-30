@@ -46,43 +46,43 @@ def grade_to_gpa(grade):
     # states gpa as blank value
     gpa = ()
 
-    if grade is str:
+    if type(grade) is str:
         # check that the grade is one of the accepted values
-        if grade == "A+":
-            assert grade == letter_grade
-        if grade == "A":
-            assert grade == letter_grade
-        if grade == "A-":
-            assert grade == letter_grade
-        if grade == "B+":
-            assert grade == letter_grade
-        if grade == "B":
-            assert grade == letter_grade
-        if grade == "B-":
-            assert grade == letter_grade
-        if grade == "FZ":
-            assert grade == letter_grade
+        if type(grade) == "A+":
+            assert type(grade) == letter_grade
+        if type(grade) == "A":
+            assert type(grade) == letter_grade
+        if type(grade) == "A-":
+            assert type(grade) == letter_grade
+        if type(grade) == "B+":
+            assert type(grade) == letter_grade
+        if type(grade) == "B":
+            assert type(grade) == letter_grade
+        if type(grade) == "B-":
+            assert type(grade) == letter_grade
+        if type(grade) == "FZ":
+            assert type(grade) == letter_grade
 
-    elif grade is int:
+    elif type(grade) is int:
         # rounds input to whole number
-        round(grade, 0)
+        round(type(grade), 0)
         # checks if value is in expected range
-        if 100 > grade:
+        if 100 > type(grade):
             raise ValueError
-        if 0 < grade:
+        if 0 < type(grade):
             raise ValueError
         # convert the numeric grade to a letter grade
-        if grade is range(85, 100):
+        if type(grade) is range(85, 100):
             assert "A+" == letter_grade
-        if grade is range(80, 84):
+        if type(grade) is range(80, 84):
             assert "A-" == letter_grade
-        if grade is range(77, 79):
+        if type(grade) is range(77, 79):
             assert "B+" == letter_grade
-        if grade is range(73, 76):
+        if type(grade) is range(73, 76):
             assert "B" == letter_grade
-        if grade is range(70, 72):
+        if type(grade) is range(70, 72):
             assert "B-" == letter_grade
-        if grade is range(0, 69):
+        if type(grade) is range(0, 69):
             assert "FZ" == letter_grade
 
     # assign the gpa value to letter_grade
@@ -103,6 +103,7 @@ def grade_to_gpa(grade):
 
     else:
         # raise a TypeError exception
+        print("error")
         raise TypeError("Invalid type passed as parameter")
 
     return gpa
