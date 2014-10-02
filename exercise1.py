@@ -40,13 +40,12 @@ def grade_to_gpa(grade):
         ValueError if parameter is out of range
     """
 
-    # states letter_grade as blank value
+    # states letter_grade and gpa as blank value
     letter_grade = ""
-
-    # states gpa as blank value
-    gpa = 0.0
+    gpa = ()
 
     if type(grade) is str:
+        print("letter")
         # check that the grade is one of the accepted values
         if type(grade) == "A+":
             assert type(grade) == letter_grade
@@ -64,15 +63,9 @@ def grade_to_gpa(grade):
             assert type(grade) == letter_grade
 
     elif type(grade) is int:
-        # rounds input to whole number
-        round(type(grade), 0)
-        # checks if value is in expected range
-        if 100 < type(grade):
-            raise ValueError
-        if 1 > type(grade):
-            raise ValueError
+        print("number")
         # convert the numeric grade to a letter grade
-        if type(grade) is range(85, 100):
+        if type(grade) is 100:
             assert "A+" == letter_grade
         if type(grade) is range(80, 84):
             assert "A-" == letter_grade
@@ -85,25 +78,25 @@ def grade_to_gpa(grade):
         if type(grade) is range(0, 69):
             assert "FZ" == letter_grade
 
-    # assign the gpa value to letter_grade
-    if letter_grade == "A+":
-        assert [4.0] == gpa
-    if letter_grade == "A":
-        assert [4.0] == gpa
-    if letter_grade == "A-":
-        assert [3.7] == gpa
-    if letter_grade == "B+":
-        assert [3.3] == gpa
-    if letter_grade == "B":
-        assert [3.0] == gpa
-    if letter_grade == "B-":
-        assert [2.7] == gpa
-    if letter_grade == "FZ":
-        assert [0.0] == gpa
-
     else:
         # raise a TypeError exception
         print("error")
         raise TypeError("Invalid type passed as parameter")
+
+    # assign the gpa value to letter_grade
+    if letter_grade == "A+":
+        gpa = 4.0
+    if letter_grade == "A":
+        gpa = 4.0
+    if letter_grade == "A-":
+        gpa = 3.7
+    if letter_grade == "B+":
+        gpa = 3.3
+    if letter_grade == "B":
+        gpa = 3.0
+    if letter_grade == "B-":
+        gpa = 2.7
+    if letter_grade == "FZ":
+        gpa = 0
 
     return gpa
