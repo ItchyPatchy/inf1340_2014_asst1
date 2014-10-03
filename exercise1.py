@@ -22,22 +22,6 @@ __status__ = "Prototype"
 # imports one per line
 
 
-# convert the numeric grade to a letter grade
-def mark_to_letter(grade):
-    if (grade <= 100) and (grade >= 85):
-        return "A+"
-    if (grade <= 84) and (grade >= 80):
-        return "A-"
-    if (grade <= 79) and (grade >= 77):
-        return "B+"
-    if (grade <= 76) and (grade >= 73):
-        return "B"
-    if (grade <= 72) and (grade >= 70):
-        return "B-"
-    if (grade <= 69) and (grade >= 0):
-        return "FZ"
-
-
 def grade_to_gpa(grade):
     """
     Returns the UofT Graduate GPA for a given grade.
@@ -77,6 +61,8 @@ def grade_to_gpa(grade):
             print("Valid Number Range")
             # assign the value to letter_grade
             letter_grade = mark_to_letter(grade)
+            print(grade)
+            print(letter_grade)
         else:
             print("Invalid Number Range!")
             raise ValueError
@@ -84,24 +70,39 @@ def grade_to_gpa(grade):
     # write a long if-statement to convert letter_grade
     # assign the value to gpa
 
-    elif letter_grade == "A+":
-        gpa = 4.0
-    elif letter_grade == "A":
-        gpa = 4.0
-    elif letter_grade == "A-":
-        gpa = 3.7
-    elif letter_grade == "B+":
-        gpa = 3.3
-    elif letter_grade == "B":
-        gpa = 3.0
-    elif letter_grade == "B-":
-        gpa = 2.7
-    elif letter_grade == "FZ":
-        gpa = 0.0
+    # elif letter_grade == "A+":
+    #     gpa = 4.0
+    # elif letter_grade == "A":
+    #     gpa = 4.0
+    # elif letter_grade == "A-":
+    #     gpa = 3.7
+    # elif letter_grade == "B+":
+    #     gpa = 3.3
+    # elif letter_grade == "B":
+    #     gpa = 3.0
+    # elif letter_grade == "B-":
+    #     gpa = 2.7
+    # elif letter_grade == "FZ":
+    #     gpa = 0.0
 
     else:
         # raise a TypeError exception
         print("error")
         raise TypeError("Invalid type passed as parameter")
-
     return gpa
+
+
+# convert the numeric grade to a letter grade
+def mark_to_letter(grade_input):
+    if (grade_input <= 100) and (grade_input >= 85):
+        return "A+"
+    if (grade_input <= 84) and (grade_input >= 80):
+        return "A-"
+    if (grade_input <= 79) and (grade_input >= 77):
+        return "B+"
+    if (grade_input <= 76) and (grade_input >= 73):
+        return "B"
+    if (grade_input <= 72) and (grade_input >= 70):
+        return "B-"
+    if (grade_input <= 69) and (grade_input >= 0):
+        return "FZ"
