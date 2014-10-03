@@ -22,6 +22,22 @@ __status__ = "Prototype"
 # imports one per line
 
 
+# convert the numeric grade to a letter grade
+def mark_to_letter(grade):
+    if (grade <= 100) and (grade >= 85):
+        return "A+"
+    if (grade <= 84) and (grade >= 80):
+        return "A-"
+    if (grade <= 79) and (grade >= 77):
+        return "B+"
+    if (grade <= 76) and (grade >= 73):
+        return "B"
+    if (grade <= 72) and (grade >= 70):
+        return "B-"
+    if (grade <= 69) and (grade >= 0):
+        return "FZ"
+
+
 def grade_to_gpa(grade):
     """
     Returns the UofT Graduate GPA for a given grade.
@@ -50,6 +66,7 @@ def grade_to_gpa(grade):
         # check that the grade is one of the accepted values
         if grade in valid_letter_grades:
             print("Valid Letter Grade")
+            letter_grade = grade
         else:
             print("Invalid Letter Grade!")
             raise ValueError
@@ -67,21 +84,20 @@ def grade_to_gpa(grade):
     # write a long if-statement to convert letter_grade
     # assign the value to gpa
 
-    # elif:
-        # if letter_grade == "A+":
-        #    gpa = 4.0
-        # if letter_grade == "A":
-        #   gpa = 4.0
-        # if letter_grade == "A-":
-        #   gpa = 3.7
-        # if letter_grade == "B+":
-        #   gpa = 3.3
-        # if letter_grade == "B":
-        #   gpa = 3.0
-        # if letter_grade == "B-":
-        #   gpa = 2.7
-        # if letter_grade == "FZ":
-        #   gpa = 0.0
+    elif letter_grade == "A+":
+        gpa = 4.0
+    elif letter_grade == "A":
+        gpa = 4.0
+    elif letter_grade == "A-":
+        gpa = 3.7
+    elif letter_grade == "B+":
+        gpa = 3.3
+    elif letter_grade == "B":
+        gpa = 3.0
+    elif letter_grade == "B-":
+        gpa = 2.7
+    elif letter_grade == "FZ":
+        gpa = 0.0
 
     else:
         # raise a TypeError exception
@@ -89,18 +105,3 @@ def grade_to_gpa(grade):
         raise TypeError("Invalid type passed as parameter")
 
     return gpa
-
-# convert the numeric grade to a letter grade
-def mark_to_letter(grade):
-    if (grade <= 100) and (grade >= 85):
-        return "A+"
-    if (grade <= 84) and (grade >= 80):
-        return "A-"
-    if (grade <= 79) and (grade >= 77):
-        return "B+"
-    if (grade <= 76) and (grade >= 73):
-        return "B"
-    if (grade <= 72) and (grade >= 70):
-        return "B-"
-    if (grade <= 69) and (grade >= 0):
-        return "FZ"
