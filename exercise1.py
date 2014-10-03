@@ -86,6 +86,7 @@ def grade_to_gpa(grade):
 
 # convert the numeric grade to a letter grade
 def mark_to_letter(grade_input):
+    """This function converts the numeric grade input into a letter grade"""
     if (grade_input <= 100) and (grade_input >= 90):
         return "A+"
     if (grade_input <= 89) and (grade_input >= 85):
