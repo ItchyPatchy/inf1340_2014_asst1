@@ -31,8 +31,6 @@ def checksum(upc):
     """
     # creates blank list to store output of string append (short variable to avoid congestion in equations)
     k = []
-    # generate a checksum from first 11 digits
-
     # check type of input
     if type(upc) is str:
         print("That's a string, buddy.")
@@ -42,22 +40,21 @@ def checksum(upc):
             # convert string to array
             for digit in upc:
                 k.append(int(digit))
+            # generate a checksum from first 11 digits
             final_digit = ((k[0] + k[2] + k[4] + k[6] + k[8] + k[10]) * 3 + (k[1] + k[3] + k[5] + k[7] + k[9])) % 10
             if final_digit != 0:
                 final_digit = 10 - final_digit
-
+            # check against the the twelfth digit
+            if final_digit == k[-1]:
+                # return True if they are equal, False otherwise
+                return True
+            if final_digit != k[-1]:
+                return False
         # raise ValueError if not 12
         else:
             print("You sure that is 12 digits?")
             raise ValueError
-
     # raise TypeError if not string
     else:
         print("Not a string value")
         raise TypeError
-    # check against the the twelfth digit
-
-    # return True if they are equal, False otherwise
-
-    return False
-
