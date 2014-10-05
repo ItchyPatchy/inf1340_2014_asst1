@@ -40,16 +40,23 @@ def decide_rps(player1, player2):
     valid_strings = ["Rock", "Paper", "Scissors"]
     # sets the conditions of a player1 win, based on a dictionary key and value
     wins = {"Rock": "Scissors", "Scissors": "Paper", "Paper": "Rock"}
+    # detects if input values are strings.
     if type(player1) is str:
+        # was not sure how to have these in same line, had to have separate "if/else" statements
         if type(player2) is str:
+            # detects if the input string is in list of accepted terms. Again, two separate statements for each player.
             if player1 in valid_strings:
                 if player2 in valid_strings:
+                    # if the player1 key matches the dictionary, it is a win
                     if wins[player1] == player2:
                         return 1
+                    # if the inputs are the same, it is a tie.
                     if player1 == player2:
                         return 0
+                    # if player1 does not win, and it is not a tie, player2 must be the winner.
                     else:
                         return 2
+# the rest of these values just raise errors if input is wrong. They are duplicated for each "if/else" statement.
                 else:
                     print("You can't just say what you want")
                     raise ValueError
