@@ -18,13 +18,6 @@ __status__ = "Prototype"
 
 # imports one per line
 
-# sets accepted input values
-valid_strings = ["Rock", "Paper", "Scissors"]
-# sets the conditions of a player1 win, based on a dictionary key and value
-wins = {"Rock": "Scissors", "Scissors": "Paper", "Paper": "Rock"}
-# tie = {"Rock": "Rock", "Scissors": "Scissors", "Paper": "Paper"}
-# loss = {"Rock": "Paper", "Scissors": "Rock", "Paper": "Scissors"}
-
 
 def decide_rps(player1, player2):
     """
@@ -43,3 +36,30 @@ def decide_rps(player1, player2):
         TypeError if parameter is not a string
         ValueError if parameter is not in accepted list
     """
+    # sets accepted input values
+    valid_strings = ["Rock", "Paper", "Scissors"]
+    # sets the conditions of a player1 win, based on a dictionary key and value
+    wins = {"Rock": "Scissors", "Scissors": "Paper", "Paper": "Rock"}
+    if type(player1) is str:
+        if type(player2) is str:
+            if player1 in valid_strings:
+                if player2 in valid_strings:
+                    if wins[player1] == player2:
+                        return 1
+                    if player1 == player2:
+                        return 0
+                    else:
+                        return 2
+                else:
+                    print("You can't just say what you want")
+                    raise ValueError
+            else:
+                print("You can't just say what you want")
+                raise ValueError
+
+        else:
+            print("You need to give me some string")
+            raise TypeError
+    else:
+        print("You need to give me some string")
+        raise TypeError

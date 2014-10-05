@@ -12,4 +12,6 @@ def test_checksum():
     assert decide_rps("Scissors", "Scissors") == 0
     assert decide_rps("Rock", "Scissors") == 1
     # other tests
-
+    #assert decide_rps("Chicken", "Cow") == 0
+    assert decide_rps("Scissors", "Paper") == 1
+    #assert decide_rps(4509, 4207) == 0
